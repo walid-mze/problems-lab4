@@ -22,5 +22,11 @@ public class Sales
             sum += sales[i];
         }
         System.out.println("\nTotal sales: " + sum);
+        //1)
+        System.out.println("\nThe average sales: " + sum/SALESPEOPLE);
+        System.out.println("\nSalesperson "+maxId+" had the highest sale with $"+maxSales);
+        System.out.println("\nSalesperson "+minId+" had the highest sale with $"+minSales);
+
+
     }
 }
