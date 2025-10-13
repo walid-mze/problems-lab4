@@ -18,6 +18,15 @@ public class Sales
         sum = 0;
         for (int i=0; i<sales.length; i++)
         {
+            //calculate the maxsales and minsales with their ids
+            if (maxSales < sales[i]){
+                maxSales = sales[i];
+                maxId = i;
+            }
+            if  (minSales > sales[i]){
+                minSales = sales[i];
+                minId = i;
+            }
             System.out.println(" " + i + " " + sales[i]);
             sum += sales[i];
         }
