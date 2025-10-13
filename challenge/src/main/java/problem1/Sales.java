@@ -16,6 +16,8 @@ public class Sales
         System.out.println("\nSalesperson Sales");
         System.out.println("--------------------");
         sum = 0;
+        maxSales = 0;
+        minSales = sales[0];
         for (int i=0; i<sales.length; i++)
         {
             //calculate the maxsales and minsales with their ids
