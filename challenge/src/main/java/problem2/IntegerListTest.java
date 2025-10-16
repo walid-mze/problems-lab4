@@ -40,6 +40,20 @@ public class IntegerListTest
             case 2:
                 list.print();
                 break;
+            case 3:
+                System.out.println("Enter value to add:");
+                int val = scan.nextInt();
+                list.addElement(val);
+                break;
+            case 4:
+                System.out.println("Enter value to remove:");
+                val = scan.nextInt();
+                list.removeFirst(val);
+                break;
+            case 5:
+                System.out.println("Enter value to remove its all occ:");
+                val = scan.nextInt();
+                list.removeAll(val);
             default:
                 System.out.println("Sorry, invalid choice");
         }
@@ -54,6 +68,10 @@ public class IntegerListTest
         System.out.println("0: Quit");
         System.out.println("1: Create a new list (** do this first!! **)");
         System.out.println("2: Print the list");
+        System.out.println("3: Add an element to the list");
+        System.out.println("4: Remove the first occ of an element from the list");
+        System.out.println("5: Remove all the occ of an  element from the list");
+
         System.out.print("\nEnter your choice: ");
     }
 }

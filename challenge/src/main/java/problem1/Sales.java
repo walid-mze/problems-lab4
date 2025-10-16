@@ -4,13 +4,20 @@ public class Sales
 {
     public static void main(String[] args)
     {
-        final int SALESPEOPLE = 5;
+        Scanner scan = new Scanner(System.in);
+
+        int SALESPEOPLE ;
+        System.out.println("Enter SALESPEOPLE number: ");
+        SALESPEOPLE = scan.nextInt();
         int[] sales = new int[SALESPEOPLE];
         int sum;
-        Scanner scan = new Scanner(System.in);
+        int maxSales;
+        int minSales;
+        int maxId=0;
+        int minId=0;
         for (int i=0; i<sales.length; i++)
         {
-            System.out.print("Enter sales for salesperson " + i + ": ");
+            System.out.print("Enter sales for salesperson " + (i+1) + ": ");
             sales[i] = scan.nextInt();
         }
         System.out.println("\nSalesperson Sales");
@@ -29,14 +36,26 @@ public class Sales
                 minSales = sales[i];
                 minId = i;
             }
-            System.out.println(" " + i + " " + sales[i]);
+            System.out.println(" " + (i+1) + " " + sales[i]);
             sum += sales[i];
         }
         System.out.println("\nTotal sales: " + sum);
         //1)
         System.out.println("\nThe average sales: " + sum/SALESPEOPLE);
-        System.out.println("\nSalesperson "+maxId+" had the highest sale with $"+maxSales);
-        System.out.println("\nSalesperson "+minId+" had the highest sale with $"+minSales);
+        System.out.println("\nSalesperson "+(maxId+1)+" had the highest sale with $"+maxSales);
+        System.out.println("\nSalesperson "+(minId+1)+" had the samllest sale with $"+minSales);
+        System.out.println("\n enter a salesvalue: ");
+        int value= scan.nextInt();
+        System.out.println("The people whose sales exceed "+value+"sales ");
+        int count=0;
+        for  (int i=0; i<sales.length; i++)
+        {
+            if (sales[i] > value){
+                System.out.println("person "+(i+1)+": " +sales[i]+" sales");
+                count++;
+            }
+        }
+        System.out.println("The total nums of salespeople whose sales exceeded "+value+": "+count);
 
 
     }
